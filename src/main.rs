@@ -1,5 +1,7 @@
+#![windows_subsystem = "windows"]
 #![warn(clippy::all, clippy::nursery, clippy::pedantic)]
 #![allow(clippy::missing_errors_doc, clippy::redundant_pub_crate)]
+use std::os::windows::process::CommandExt;
 
 use crate::parser::HotkeyBinding;
 use crate::whkdrc::Shell;
@@ -135,6 +137,7 @@ fn spawn_shell(shell: Shell) -> Result<()> {
             let mut process = Command::new(&shell_binary)
                 .stdin(Stdio::piped())
                 .args(["-Command", "-"])
+                .creation_flags(0x08000000) // CREATE_NO_WINDOW
                 .spawn()?;
 
             let mut stdin = process
@@ -151,6 +154,7 @@ fn spawn_shell(shell: Shell) -> Result<()> {
             let mut process = Command::new(&shell_binary)
                 .stdin(Stdio::piped())
                 .args(["-"])
+                .creation_flags(0x08000000) // CREATE_NO_WINDOW
                 .spawn()?;
 
             let mut stdin = process

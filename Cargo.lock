@@ -943,7 +943,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "whkd"
+name = "whkd-fork"
 version = "0.2.7"
 dependencies = [
  "active-win-pos-rs",

@@ -1,8 +1,8 @@
 [package]
-name = "whkd"
+name = "whkd-fork"
 version = "0.2.7"
-description = "A simple hotkey daemon for Windows"
-repository = "https://github.com/LGUG2Z/whkd"
+description = "A simple hotkey daemon for Windows (Fork)"
+repository = "https://github.com/MidnightTale/whkd"
 license = "MIT"
 edition = "2021"
 
